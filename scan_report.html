@@ -1,0 +1,29 @@
+
+    <html>
+    <head><title>Web Vulnerability Scan Report</title></head>
+    <body>
+    <h1>Scan Report for https://google.com</h1>
+    <p><strong>Status Code:</strong> 200</p>
+    <p><strong>Timestamp:</strong> 2025-09-02 17:58:32</p>
+    <p><strong>Scan Duration:</strong> 10.16 seconds</p>
+    <h2>Security Headers</h2>
+    <ul>
+    <li>Content-Security-Policy: Missing</li><li>Strict-Transport-Security: Missing</li><li>X-Content-Type-Options: Missing</li><li>X-Frame-Options: Present</li><li>X-XSS-Protection: Present</li>
+    </ul>
+    <h2>Open Redirect</h2>
+    <p>Potential open redirect to https://www.google.com/?next=https://evil.com</p>
+    <h2>Endpoints</h2>
+    <ul>
+    <li>https://google.com/robots.txt</li>
+    </ul>
+    <h2>Sensitive Files</h2>
+    <ul>
+    
+    </ul>
+    <h2>Vulnerabilities</h2>
+    <ul>
+    <li>sqli: ["?id=' OR '1'='1", "?id=' UNION SELECT 1 --"]</li><li>xss: ['?q=<script>alert(1)</script>', '?q=<img src=x onerror=alert(1)>']</li><li>lfi: ['?file=../../../../etc/passwd', '?file=../../../../windows/system32/drivers/etc/hosts']</li>
+    </ul>
+    </body>
+    </html>
+    

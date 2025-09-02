@@ -1,0 +1,50 @@
+{
+    "url": "https://google.com",
+    "status_code": 200,
+    "headers": {
+        "Date": "Tue, 02 Sep 2025 12:28:23 GMT",
+        "Expires": "-1",
+        "Cache-Control": "private, max-age=0",
+        "Content-Type": "text/html; charset=ISO-8859-1",
+        "Content-Security-Policy-Report-Only": "object-src 'none';base-uri 'self';script-src 'nonce-H2aUydq7bH6vzd6RqF06NA' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp",
+        "Accept-CH": "Sec-CH-Prefers-Color-Scheme",
+        "P3P": "CP=\"This is not a P3P policy! See g.co/p3phelp for more info.\"",
+        "Content-Encoding": "gzip",
+        "Server": "gws",
+        "X-XSS-Protection": "0",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Set-Cookie": "AEC=AVh_V2hazJ1d3kvcVViK8hHc8_PCVue5M1-1jv0zrdU7cYMZt9hnFJLmzk8; expires=Sun, 01-Mar-2026 12:28:23 GMT; path=/; domain=.google.com; Secure; HttpOnly; SameSite=lax, NID=525=Nfc-5iYkSGsqwrSI3nw362NC33WvVBwiHipWml7qP_R4M8EUEbQbSzoXezll_nJSwyk9bgoho7D7TtywV5-Qo7f-UNHdqvxy-vyd_1d6hl4Ke00Aaig59Bn5Rch3Wt7VuBFD1KM6cX3hXKlxDBUwmdZMcTYYnjQuhlTUK9q-YGgSgPqE_2raEM0cADVD7cDz-mNdktSHAGTq1vYKVqI; expires=Wed, 04-Mar-2026 12:28:23 GMT; path=/; domain=.google.com; HttpOnly",
+        "Alt-Svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+        "Transfer-Encoding": "chunked"
+    },
+    "security_headers": {
+        "Content-Security-Policy": "Missing",
+        "Strict-Transport-Security": "Missing",
+        "X-Content-Type-Options": "Missing",
+        "X-Frame-Options": "Present",
+        "X-XSS-Protection": "Present"
+    },
+    "open_redirect": "Potential open redirect to https://www.google.com/?next=https://evil.com",
+    "endpoints": [
+        "https://google.com/robots.txt"
+    ],
+    "server": "gws",
+    "ssl_status": "HTTPS enforced",
+    "sensitive_files_found": [],
+    "vulnerabilities": {
+        "sqli": [
+            "?id=' OR '1'='1",
+            "?id=' UNION SELECT 1 --"
+        ],
+        "xss": [
+            "?q=<script>alert(1)</script>",
+            "?q=<img src=x onerror=alert(1)>"
+        ],
+        "lfi": [
+            "?file=../../../../etc/passwd",
+            "?file=../../../../windows/system32/drivers/etc/hosts"
+        ]
+    },
+    "timestamp": "2025-09-02 17:58:32",
+    "scan_duration_seconds": 10.16
+}
